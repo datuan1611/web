@@ -1,7 +1,9 @@
 # HTML, CSS, and JavaScript: Building the Web
 
 [linkedin_learning]
+```URL
 https://www.linkedin.com/learning/html-css-and-javascript-building-the-web
+```
 
 ## Skill covered
 - Web Development
@@ -11,8 +13,9 @@ https://www.linkedin.com/learning/html-css-and-javascript-building-the-web
 
 
 ## Git
+```URL
 https://github.com/microsoft/Web-Dev-For-Beginners.git
-
+```
 
 ## AI-assisted (Copilot) in VSCode
 
