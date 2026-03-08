@@ -14,7 +14,7 @@ format file: *.html
 	<head>
 		<title>Title of website</title>
 		<meta charset="" , name="" , content="" />
-		<link rel="stypesheet" , href="stype.css" />
+		<link rel="stylesheet" , href="style.css" />
 		<script src="script.js" defer></script>
 	</head>
 	<body>

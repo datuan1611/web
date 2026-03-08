@@ -1,0 +1,116 @@
+@charset "utf-8";
+
+body {
+	margin:0;
+}
+
+#panel {
+	margin: 50px 0px 0px 50px;
+	width: 400px;
+	outline: 1px solid #0F0;
+	border: 1px solid #000;
+	max-height: 50px;
+	/* overflow: hidden; */
+	overflow: scroll;
+}
+
+#left {
+	width: 50px;
+	height: 80px;
+	background-color: #3c0;
+	float: right;
+}
+
+#clear {
+	clear: both;
+}
+
+a:link, a:active, a:visited {
+	color: #900;
+	font-size: 20px;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #090;
+}
+
+.example {
+	width: 250px;
+	padding: 5px;
+	border: 1px solid #009;
+}
+
+.example:hover {
+	border: 1px solid #F00;
+}
+
+.example:focus {
+	border: 1px solid #00F;
+}
+
+input:valid {border: 1px solid #00C;}
+input:invalid {border: 1px solid #F00;}
+input:disabled {background-color: #0C0;}
+
+div::before {
+	/* content: "[+]";
+	color: #F00; */
+	content: "";
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background-color: #090;
+}
+div::after {
+	content: "...!";
+}
+
+/* Transition */
+#div4 {
+	width: 100px;
+	height: 100px;
+	border: 5px solid transparent;
+	border-image: url('border.png') 30 round;
+
+	box-shadow: 2px 2px 50px red;
+
+	transition: 1s;
+}
+#div4:hover {
+	width: 250px;
+	height: 250px;
+}
+
+/* Transform > Translate */
+#div5 {
+	width: 100px;
+	height: 100px;
+	background-color: #093;
+	transition: 1s;
+}
+#div5:hover {
+	transform: translate(300px,0px);
+}
+
+/* Transform > Rotate */
+#div6 {
+	width: 100px;
+	height: 100px;
+	background-color: #C00;
+	transition: 1s;
+}
+#div6:hover {
+	transform: rotate(45deg);
+}
+
+/* Transform > Scale */
+#div7 {
+	width: 100px;
+	height: 100px;
+	background-color: #f09;
+	transition: 1s;
+}
+#div7:hover {
+	transform: scale(2,3);
+}
