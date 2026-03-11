@@ -880,23 +880,23 @@ using to change smoothly value of an attribute of a HTML element
 ```
 *method 1: identify common time to change multy attributes*
 ```css
-div {
+#ex_transition {
 	width: 100px; height: 100px;
 	background: red;
 	transition: 1s;
 }
-div:hover {
+#ex_transition:hover {
 	width: 200px; height: 150px;
 }
 ```
 *method 2: identify particular time to change each different attributes*
 ```css
-div {
+#ex_transition {
 	width: 100px; height: 100px;
 	background: red;
 	transition: width 1s, height 2s;
 }
-div:hover {
+#ex_transition:hover {
 	width: 200px; height: 150px;
 }
 ```
@@ -923,32 +923,95 @@ translateY(y)	->	move element "y" unit in Y-Axis
 translate(x,y)	->	move element "x" unit in X-Axis, move element "y" unit in Y-Axis
 ```
 ```css
-#div1 {
-	transform: translateX(50px) translateY(100px);
-}
-#div2 {
+#ex_transform2D_translate {
+	/* transform: translateX(50px) translateY(100px); */
 	transform: translate(50px,100px);
 }
 ```
 
 *Transform 2D > Rotate*
 ```css
-#div3 {
+#ex_transform2D_rotate {
 	transform: rotate(45deg);
 }
 ```
 
 *Transform 2D > scaleX(x) scaleY(y)*
 ```css
-#div3 {
+#ex_transform2D_scale {
 	transform: scaleX(2) scaleY(0.5);
 	transform: scale(2,0,5)
 }
 ```
 
-*Transform 2D > skew(x) scaleY(y)*
+*Transform 2D > skewX(x) skewY(y)*
 ```css
-#div3 {
-	transform: skewX(20deg) scaleY(0deg);
+#ex_transform2D_skew {
+	/* transform: skewX(20deg) scaleY(30deg); */
+	transform: skew(20deg, 30deg);
+}
+```
+
+*Transform 2D > matrix(1,2,3,4,5,6)*
+```text
+combine 6 different functions into 1 function "matrix(1,2,3,4,5,6)"
+1 - scaleX
+2 - skewY
+3 - skewX
+4 - scaleY
+5 - translateX
+6 - translateY
+```
+
+*Transform 3D > rotateX(deg),rotateY(deg),rotateZ(deg), rotate3D(x,y,z,deg)*
+```css
+#ex_transform3D_rotate {
+	/* transform: rotateX(45deg) rotateY(0deg) rotateZ(45deg); */
+	transform: rotate3D(1,0,1,45deg);
+}
+```
+
+
+# 14. Responsive (Viewport)
+```text
+Responsive	->	display of website "auto" change/update to be fit with size of device screen
+Viewport	->	config in HTML to define how to zoom content whenever change size of screen
+				often set zoom config as 1:1
+
+Attributes of Viewport:
+	width, height					->	size of viewport
+	intial-scale					->	rate of zoom
+	minimum-scale, maximum-scale	->	min/max of zoom
+	user-scalable					->	allow user zoom or not?
+	device-width, device-height		->	size of device screen
+
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+if not config viewport, when change device screen, website will auto zoom smaller/bigger
+content might be too small, and might not be able to read
+```
+**Function @media**
+```text
+@media
+	re-write CSS for HTML element in different conditions/cases
+	formular:
+		@media media_type and list-conditions {}
+	media-type:
+		all		-->		for all device
+		screen	-->		for screen of desktop, laptop, mobile, tablet...
+		print	-->		for document printing
+	setup conditions:
+		min-width / max-width
+		min-height / max-height
+	example:
+		(min-width:300px) and (max-width:500px)		->	width from 300 to 500
+		
+```
+```css
+/* in normal cases, color of content is green
+   in case width is smaller than 500px, color of content is red */
+body {color:green;}
+@media all and (max-width:500px) {
+	body {color:red;}
 }
 ```
